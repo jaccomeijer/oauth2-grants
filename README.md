@@ -1,6 +1,7 @@
-# oauth2-response-generator
+# oauth2-grants
 
-OAuth 2 response generator, inspired by `jasonraimondi/ts-oauth2-server`
+Library for handling OAuth 2 auth requests with Express, inspired by
+`jasonraimondi/ts-oauth2-server`
 
 ## Collections
 
@@ -24,3 +25,9 @@ OAuth 2 response generator, inspired by `jasonraimondi/ts-oauth2-server`
 ## PKCE
 
 - PKCE (<https://datatracker.ietf.org/doc/html/rfc7636>)
+
+## Roadmap
+
+- [ ] Unit tests
+- [ ] Docs
+- [ ] Express oath2 server example
