@@ -8,7 +8,7 @@ import pluginCommonjs from '@rollup/plugin-commonjs'
 import pluginNodeResolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 import pkg from './package.json'
-import rootPkg from '../../package.json'
+import rootPkg from './package.json'
 
 const moduleName = pkg.name.replace(/^@.*\//, '')
 const author = rootPkg.author
@@ -54,7 +54,7 @@ export default [
         file: `./build/plain.mjs`,
         format: 'es',
         globals,
-        sourcemap: true,
+        sourcemap: false,
       },
       {
         banner,
@@ -62,7 +62,7 @@ export default [
         file: `./build/plain.cjs`,
         format: 'cjs',
         globals,
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
     plugins,
