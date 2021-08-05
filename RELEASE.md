@@ -1,7 +1,3 @@
-# Changelog
-
-# Release 6.29.0
-
 ## @jaccomeijer/oauth2-grants 6.29.0
 
 ## 6.29.0 (2021-08-05)
@@ -81,6 +77,3 @@
 * use scopes from storage during authorization token request ([15eaa34](https://github.com/jaccomeijer/oauth2-grants/commit/15eaa34255aae3f327d6b0a87d4c5281dee5d121))
 
 
-# Release 6.28.1
-
-## Start of changelog
