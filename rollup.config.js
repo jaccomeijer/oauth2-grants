@@ -33,6 +33,7 @@ const plugins = [
   // so Rollup can find node modules
   pluginNodeResolve({
     preferBuiltins: true,
+    exportConditions: ['node'],
   }),
   // so Rollup can convert node modules to ES modules
   pluginCommonjs({
