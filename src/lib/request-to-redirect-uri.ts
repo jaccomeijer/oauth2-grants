@@ -39,7 +39,16 @@ export const requestToRedirectUri = ({ client, req }: RequestToRedirectUri) => {
     })
   }
 
-  if (!client.redirectUris.includes(redirectUrlObj.href)) {
+  let hasValidUri = false
+  for (const uriRegexp of client.redirectUris) {
+    const uriTest = new RegExp(uriRegexp)
+    if (uriTest.test(redirectUrlObj.href)) {
+      hasValidUri = true
+      break
+    }
+  }
+
+  if (!hasValidUri) {
     throw invalidRequestErrorFactory({
       arg: 'redirect_uri',
       description: 'The client_id / redirect_uri combination is invalid',
