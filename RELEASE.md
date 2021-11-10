@@ -1,10 +1,10 @@
-## @jaccomeijer/oauth2-grants 6.29.1
+## @jaccomeijer/oauth2-grants 6.30.0
 
-### [6.29.1](https://github.com/jaccomeijer/oauth2-grants/compare/6.29.0...6.29.1) (2021-09-21)
+## [6.30.0](https://github.com/jaccomeijer/oauth2-grants/compare/6.29.1...6.30.0) (2021-11-10)
 
 
-### Bug Fixes
+### Features
 
-* set export conditions for nodejs ([8f7425f](https://github.com/jaccomeijer/oauth2-grants/commit/8f7425fe13bf97e2fc549c6a40151a5035bdb583))
+* check client urls with regexp instead of simple string match ([882fe42](https://github.com/jaccomeijer/oauth2-grants/commit/882fe422caa16f79e5934e3b43dea75c814bde9f))
 
 

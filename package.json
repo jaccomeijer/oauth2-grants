@@ -1,6 +1,6 @@
 {
   "name": "@jaccomeijer/oauth2-grants",
-  "version": "6.29.1",
+  "version": "6.30.0",
   "description": "Oauth 2.0 server",
   "keywords": [
     "authentication",
