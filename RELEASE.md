@@ -1,10 +1,10 @@
-## @jaccomeijer/oauth2-grants 6.30.0
+## @jaccomeijer/oauth2-grants 6.31.0
 
-## [6.30.0](https://github.com/jaccomeijer/oauth2-grants/compare/6.29.1...6.30.0) (2021-11-10)
+## [6.31.0](https://github.com/jaccomeijer/oauth2-grants/compare/6.30.0...6.31.0) (2021-11-11)
 
 
 ### Features
 
-* check client urls with regexp instead of simple string match ([882fe42](https://github.com/jaccomeijer/oauth2-grants/commit/882fe422caa16f79e5934e3b43dea75c814bde9f))
+* client credentials grant ([b405fba](https://github.com/jaccomeijer/oauth2-grants/commit/b405fbac8bbbc1a32c9bac41061dcf49c163dd85))
 
 
