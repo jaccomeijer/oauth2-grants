@@ -2,7 +2,7 @@ export interface TokenResponseParameters {
   accessToken: string
   expiresInSeconds: number
   idToken?: string
-  refreshToken: string
+  refreshToken?: string
   scopes: string
 }
 

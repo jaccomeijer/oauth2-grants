@@ -5,7 +5,7 @@ import { MaxAge } from '../max-age/max-age'
 
 export type ResponseToSend = {
   parameters: Record<string, any>
-  redirectUri: string
+  redirectUri?: string
 }
 
 export interface CommonResponseInput {

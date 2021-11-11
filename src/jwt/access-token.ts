@@ -17,9 +17,9 @@ export interface CreateAccessTokenPayload {
   /** JWT scope */
   scopes: string
   /** JWT email */
-  userEmail: string
+  userEmail?: string
   /** JWT sub */
-  userId: string
+  userId?: string
 }
 
 export const createAccessTokenPayload = ({
@@ -42,7 +42,10 @@ export const createAccessTokenPayload = ({
     iss: issuer,
     nbf: notBeforeSeconds,
     scope: scopes,
-    sub: userId,
+    // The client_credentials grant is intended for machine to machine
+    // communication. This grant does not require a user. Thus, use the client
+    // id for that grant.
+    sub: userId || clientId,
   }
   const md = new KJUR.crypto.MessageDigest({ alg: 'sha1', prov: 'cryptojs' })
   payload.jti = hextob64(<any>md.digestString(JSON.stringify(payload)))

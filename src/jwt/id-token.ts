@@ -8,9 +8,9 @@ export interface CreateIdTokenPayload {
   issuer: string
   nonce?: string
   notBeforeSeconds: number
-  userEmail: string
-  userId: string
-  userName: string
+  userEmail?: string
+  userId?: string
+  userName?: string
 }
 
 export const createIdTokenPayload = ({
@@ -34,7 +34,10 @@ export const createIdTokenPayload = ({
     name: userName,
     nbf: notBeforeSeconds,
     nonce,
-    sub: userId,
+    // The client_credentials grant is intended for machine to machine
+    // communication. This grant does not require a user. Thus, use the client
+    // id for that grant.
+    sub: userId || clientId,
   }
   const md = new KJUR.crypto.MessageDigest({ alg: 'sha1', prov: 'cryptojs' })
   payload.jti = hextob64(<any>md.digestString(JSON.stringify(payload)))
