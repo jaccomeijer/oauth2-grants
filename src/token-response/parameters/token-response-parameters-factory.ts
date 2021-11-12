@@ -70,7 +70,6 @@ export const tokenResponseParametersFactory = async ({
 }: TRPFAuthorizationCode | TRPFClientCredentials | TRPFRefreshToken) => {
   let accessTokenMaxAge = 0
   let refreshTokenMaxAge = 0
-  let responseMaxAge = 0
   let userEmail: string | undefined
   let userId: string | undefined
   type Rest = { user: UserCollection }
@@ -78,13 +77,11 @@ export const tokenResponseParametersFactory = async ({
     const thisMaxAge = maxAge.tokenEndpoint.authorizationCodeGrant
     accessTokenMaxAge = thisMaxAge.accessToken
     refreshTokenMaxAge = thisMaxAge.refreshToken
-    responseMaxAge = thisMaxAge.response
     userEmail = (rest as Rest).user.email
     userId = (rest as Rest).user.id
   } else if (grant === 'client_credentials') {
     const thisMaxAge = maxAge.tokenEndpoint.clientCredentialsGrant
     accessTokenMaxAge = thisMaxAge.accessToken
-    responseMaxAge = thisMaxAge.response
     // The client_credentials grant is intended for machine to machine
     // communication. This grant does not require a user. Leave userEmail and
     // userId undefined. There's no refresh token for this grant. Leave
@@ -93,7 +90,6 @@ export const tokenResponseParametersFactory = async ({
     const thisMaxAge = maxAge.tokenEndpoint.refreshTokenGrant
     accessTokenMaxAge = thisMaxAge.accessToken
     refreshTokenMaxAge = thisMaxAge.refreshToken
-    responseMaxAge = thisMaxAge.response
     userEmail = (rest as Rest).user.email
     userId = (rest as Rest).user.id
   }
@@ -162,7 +158,7 @@ export const tokenResponseParametersFactory = async ({
 
   const parameters = tokenResponseParameters({
     accessToken,
-    expiresInSeconds: responseMaxAge,
+    expiresInSeconds: accessTokenMaxAge,
     idToken,
     refreshToken,
     scopes: scopes.map((scope) => scope.name).join(' '),

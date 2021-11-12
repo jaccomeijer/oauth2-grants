@@ -4,17 +4,14 @@ export type AuthorizeEndpoint = {
 
 export type TokenEndpoint = {
   authorizationCodeGrant: {
-    response: number
     accessToken: number
     idToken: number
     refreshToken: number
   }
   clientCredentialsGrant: {
-    response: number
     accessToken: number
   }
   refreshTokenGrant: {
-    response: number
     accessToken: number
     refreshToken: number
   }
