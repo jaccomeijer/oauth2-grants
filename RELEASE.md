@@ -1,15 +1,10 @@
-## @jaccomeijer/oauth2-grants 6.31.2
+## @jaccomeijer/oauth2-grants 6.31.3
 
-### [6.31.2](https://github.com/jaccomeijer/oauth2-grants/compare/6.31.1...6.31.2) (2021-11-12)
-
-
-### Bug Fixes
-
-* uriTest might be undefined ([1f7cf0e](https://github.com/jaccomeijer/oauth2-grants/commit/1f7cf0e7c59fb2644819e9e63ca7d370dc2cd1e8))
+### [6.31.3](https://github.com/jaccomeijer/oauth2-grants/compare/6.31.2...6.31.3) (2021-11-12)
 
 
 ### Commits
 
-* update packages ([0919b33](https://github.com/jaccomeijer/oauth2-grants/commit/0919b333eedd8ad594cd930862f9cf59ec080235))
+* remove response from MaxAge type ([bf5438e](https://github.com/jaccomeijer/oauth2-grants/commit/bf5438e5b2ea77536efc25a1dca24af423b811d2))
 
 
