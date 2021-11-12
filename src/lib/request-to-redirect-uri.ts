@@ -42,7 +42,7 @@ export const requestToRedirectUri = ({ client, req }: RequestToRedirectUri) => {
   let hasValidUri = false
   for (const uriRegexp of client.redirectUris) {
     const uriTest = new RegExp(uriRegexp)
-    if (uriTest.test(redirectUrlObj.href)) {
+    if (uriTest?.test(redirectUrlObj.href)) {
       hasValidUri = true
       break
     }
