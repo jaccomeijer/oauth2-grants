@@ -102,8 +102,11 @@ export const authorizationCodeGrant = async ({
     })
   }
 
+  // Retrieve and validate client from request
   const client = await requestToClient({ collectionApi, req })
+  // Retrieve and validate redirect uri from request
   const redirectUri = requestToRedirectUri({ client, req })
+  // Retrieve and validate scopes from request
   const scopes = await requestToScopes({ client, req })
 
   if (codeTokenPayload.client_id !== client.id) {

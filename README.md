@@ -1,26 +1,40 @@
 # oauth2-grants
 
-Library for handling OAuth 2 auth requests with Express, inspired by
-`jasonraimondi/ts-oauth2-server`
+Library for handling OAuth 2 auth requests with Express.
 
-## Collections
+## Database models
 
-- code
-- client
-- token
-- scope
-- user
+- [AuthCodeCollection](./src/collection/auth-code.ts)
+- [ClientCollection](./src/collection/client.ts)
+- [ScopeCollection](./src/collection/scope.ts)
+- [TokenCollection](./src/collection/token.ts)
+- [UserCollection](./src/collection/user.ts)
 
-## Grants
+## Database API interface
 
-(<https://datatracker.ietf.org/doc/html/rfc6749#section-1.3>)
+- [CollectionApi](./src/collection/collection-api.ts)
 
-- Authorization code
-- Refresh token (<https://datatracker.ietf.org/doc/html/rfc6749#section-1.5>)
+## Implemented grants
 
-- Client Credentials (not implemented)
-- Implicit (not implemented because unsafe)
-- Resource Owner Password Credentials (not implemented because unsafe)
+### Authorization code
+
+- RFC: <https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1>)
+- Source: [authorization-code-grant.ts](./src/token-response/grants/authorization-code-grant.ts)
+
+### Client Credentials
+
+- RFC: <https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4>)
+- Source: [client-credentials-grant.ts](./src/token-response/grants/client-credentials-grant.ts)
+
+### Refresh token
+
+- RFC: <https://datatracker.ietf.org/doc/html/rfc6749#section-1.5>)
+- Source: [refresh-token-grant.ts](./src/token-response/grants/refresh-token-grant.ts)
+
+## Unsafe grants (not implemented)
+
+- Implicit (<https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.2>)
+- Resource Owner Password Credentials (<https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.3>)
 
 ## PKCE
 
@@ -29,5 +43,4 @@ Library for handling OAuth 2 auth requests with Express, inspired by
 ## Roadmap
 
 - [ ] Unit tests
-- [ ] Docs
-- [ ] Express oath2 server example
+- [ ] Documented express oath2 server example

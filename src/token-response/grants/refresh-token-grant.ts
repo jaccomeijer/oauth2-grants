@@ -62,6 +62,7 @@ export const refreshTokenGrant = async ({
     userId: existingRefreshTokenPayload.user_id,
     req,
   })
+  // Retrieve and validate client from request
   const client = await requestToClient({ collectionApi, req })
 
   if (existingRefreshTokenPayload.client_id !== client.id) {
@@ -75,7 +76,9 @@ export const refreshTokenGrant = async ({
     refreshToken: existingRefreshToken,
     req,
   })
+  // Retrieve and validate scopes from request
   const scopes = await requestToScopes({ client, req })
+  // Retrieve and validate redirect uri from request
   const redirectUri = requestToRedirectUri({ req, client })
   const parameters = await tokenResponseParametersFactory({
     audience,

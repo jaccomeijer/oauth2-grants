@@ -12,7 +12,9 @@ export const clientCredentialsGrant = async ({
   maxAge,
   req,
 }: TokenResponse): Promise<ResponseToSend> => {
+  // Retrieve and validate client from request
   const client = await requestToClient({ collectionApi, req })
+  // Retrieve and validate scopes from request
   const scopes = await requestToScopes({ client, req })
 
   const parameters = await tokenResponseParametersFactory({
